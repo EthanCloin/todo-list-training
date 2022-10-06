@@ -8,11 +8,15 @@ interface Props {
 
 const TodoList = ({ todoListData: todoListData }: Props) => {
   return (
-    <ol className="TodoList">
-      {todoListData.map((todo, idx) => (
-        <TodoItem key={idx} todoData={todo} />
-      ))}
-    </ol>
+    <div className="TodoList">
+      <h1>To-Do List</h1>
+      <h3>A place to store your todos</h3>
+      <ol>
+        {todoListData.map((todo, idx) => (
+          <TodoItem key={idx} todoData={todo} />
+        ))}
+      </ol>
+    </div>
   );
 };
 

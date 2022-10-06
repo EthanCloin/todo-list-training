@@ -22,12 +22,25 @@ const testTodoListData: Todo[] = [
 
 function App() {
   const [todoListData, setTodoListData] = useState(testTodoListData);
-  const [formActive, setFormActive] = useState(false);
+
+  const addTodo = (todo: Todo) => {
+    setTodoListData([...todoListData, todo]);
+  };
+
+  const deleteTodo = (index: number) => {
+    setTodoListData(todoListData.filter((todo, idx) => index !== idx));
+  };
+
+  const filterTodos = (searchTerm: string) => {
+    setTodoListData(
+      todoListData.filter((todo) => todo.task.includes(searchTerm))
+    );
+  };
+
   return (
     <div className="App">
       <TodoList todoListData={todoListData} />
-      {formActive && <TodoForm />}
-      <button onClick={() => setFormActive(() => true)}>Add</button>
+      <TodoForm />
     </div>
   );
 }
