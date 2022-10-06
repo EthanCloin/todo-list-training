@@ -40,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <TodoList todoListData={todoListData} />
-      <TodoForm />
+      <TodoForm addTodo={addTodo} />
     </div>
   );
 }

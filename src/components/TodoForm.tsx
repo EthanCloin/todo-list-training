@@ -2,11 +2,15 @@ import "./TodoForm.css";
 import Todo from "../models/Todo";
 import React, { useState } from "react";
 
-const TodoForm = () => {
+interface Props {
+  addTodo: (todo: Todo) => void;
+}
+
+const TodoForm = ({ addTodo }: Props) => {
   const [newTodo, setNewTodo] = useState("");
-  const onSave = (e: React.FormEvent): Todo => {
+  const onSave = (e: React.FormEvent) => {
     e.preventDefault();
-    return { task: newTodo, isComplete: false };
+    addTodo({ task: newTodo, isComplete: false });
   };
   return (
     <form className="TodoForm" onSubmit={(e) => onSave(e)}>
