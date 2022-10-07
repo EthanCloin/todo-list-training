@@ -1,0 +1,22 @@
+.TodoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  height: fit-content;
+  color: black;
+  border: none;
+  background-color: inherit;
+  font-size: 1.2rem;
+}
+
+.complete-btn {
+  border: solid #ff69b4 1px;
+  color: #ff69b4;
+  background-color: white;
+  border-radius: 10%;
+  font-size: small;
+  font-weight: 600;
+}

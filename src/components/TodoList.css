@@ -1,0 +1,7 @@
+.TodoList {
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+}

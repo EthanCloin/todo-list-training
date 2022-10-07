@@ -11,6 +11,7 @@ const TodoForm = ({ addTodo }: Props) => {
   const onSave = (e: React.FormEvent) => {
     e.preventDefault();
     addTodo({ task: newTodo, isComplete: false });
+    setNewTodo(() => "");
   };
   return (
     <form className="TodoForm" onSubmit={(e) => onSave(e)}>
@@ -22,8 +23,9 @@ const TodoForm = ({ addTodo }: Props) => {
         placeholder="Add your to-do"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
+        className="add-textfield"
       />
-      <input type="submit" value="Add" />
+      <input className="add-btn" type="submit" value="Add" />
     </form>
   );
 };

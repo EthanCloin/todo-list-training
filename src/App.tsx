@@ -36,10 +36,13 @@ function App() {
       todoListData.filter((todo) => todo.task.includes(searchTerm))
     );
   };
+  const setTodoComplete = (index: number, isComplete: boolean) {
+    todoListData.
+  }
 
   return (
     <div className="App">
-      <TodoList todoListData={todoListData} />
+      <TodoList todoListData={todoListData} deleteTodo={deleteTodo} />
       <TodoForm addTodo={addTodo} />
     </div>
   );
