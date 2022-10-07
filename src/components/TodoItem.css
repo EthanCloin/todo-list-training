@@ -20,3 +20,7 @@
   font-size: small;
   font-weight: 600;
 }
+
+.TodoItem .completed {
+  text-decoration: line-through;
+}

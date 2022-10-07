@@ -5,9 +5,10 @@ import "./TodoList.css";
 interface Props {
   todoListData: Todo[];
   deleteTodo: (index: number) => void;
+  onComplete: (index: number) => void;
 }
 
-const TodoList = ({ todoListData, deleteTodo }: Props) => {
+const TodoList = ({ todoListData, deleteTodo, onComplete }: Props) => {
   return (
     <div className="TodoList">
       <h1>To-Do List</h1>
@@ -18,6 +19,7 @@ const TodoList = ({ todoListData, deleteTodo }: Props) => {
             key={idx}
             todoData={todo}
             deleteTodo={() => deleteTodo(idx)}
+            onComplete={() => onComplete(idx)}
           />
         ))}
       </ol>
